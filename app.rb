@@ -6,7 +6,7 @@ def template
   """
   <html>
   <body>
-  <form action='/' method='get'>
+  <form action='/' method='post'>
   What: <input name='what'>
   Cost: <input name='cost'>
   <button type='submit'>add coffee</button>
@@ -20,6 +20,10 @@ def template
 end
 
 get "/" do
+  template
+end
+
+post '/' do
   $coffees << params
   template
 end
